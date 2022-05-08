@@ -1,14 +1,14 @@
-import CustomNav from "../CustomNav/CustomNav"
-
+import logo from "../../assets/logo_WH.png"
+import "./footer.scss"
 
 function Footer() {
     return (
         <>
             <footer>
-                <nav>
-                    <CustomNav to="/" label="Home">
-                    </CustomNav>
-                </nav>
+                <div className="logo_content">
+                    <img src={logo}></img>
+                    <p>WEALTH HEALTH</p>
+                </div>
             </footer>
         </>
     )
