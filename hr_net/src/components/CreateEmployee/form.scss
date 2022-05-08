@@ -1,0 +1,61 @@
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button{
+        width: 20%;
+        color: #243400;
+        background-color: transparent;
+        border: 1px solid #243400;
+        box-shadow: 1px 1px 4px #243400;;
+        border-radius: 3px;
+        font-size: 1.2em;
+        padding: 0.5em;
+        margin: 2vw 40%;
+    }
+    button:hover{
+        background-color: #243400;
+        color: #FFFF;
+        border: 1px solid transparent;
+        
+    }
+
+}
+
+.inputs{
+    width: 80%;
+    margin: 1vw 0; 
+    display: flex;
+    justify-content: space-between;
+    input{
+        width: 65%;
+        border: 1px solid #243400;
+        border-radius: 3px;
+        padding: 0.3em;
+    }
+}
+
+.adress{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    h4{
+        width: 100%;
+        font-size: 1.3em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .inputs{
+        width: 100%;
+    }
+}
+
+.deco{
+    display: block;
+    width: 40%;
+    height: 1px;
+    background-color: #243400;
+
+}
