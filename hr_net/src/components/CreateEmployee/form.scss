@@ -3,6 +3,12 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.submit_button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
     button{
         width: 20%;
         color: #243400;
@@ -12,7 +18,7 @@ form{
         border-radius: 3px;
         font-size: 1.2em;
         padding: 0.5em;
-        margin: 2vw 40%;
+        margin: 2vw 0;
     }
     button:hover{
         background-color: #243400;
@@ -20,7 +26,6 @@ form{
         border: 1px solid transparent;
         
     }
-
 }
 
 .inputs{
@@ -32,7 +37,7 @@ form{
         width: 65%;
         border: 1px solid #243400;
         border-radius: 3px;
-        padding: 0.3em;
+        padding: 0.4em;
     }
 }
 
@@ -50,6 +55,19 @@ form{
     .inputs{
         width: 100%;
     }
+
+    select{
+        padding: 0.3em;
+        width: 65%;
+        border: 1px solid #243400;
+        color: #243400;
+        border-radius: 3px;
+        font-size: 1em;
+        -ms-box-sizing:content-box;
+        -moz-box-sizing:content-box;
+        -webkit-box-sizing:content-box; 
+        box-sizing:content-box;
+    }
 }
 
 .deco{
@@ -59,3 +77,42 @@ form{
     background-color: #243400;
 
 }
+
+.input_date{
+    width: 80%;
+    margin: 1vw 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.react-date-picker{
+    display: flex;
+    width: 65%;
+    position: relative;
+    align-items: center;
+    flex-wrap: nowrap;
+    
+    button{
+        margin: 0;
+        box-shadow: none;
+        width: 10%;
+        svg{
+            stroke: #243400;
+        }
+    }
+
+    input::placeholder{
+    color: #243400;
+    }
+}
+.react-date-picker__wrapper{
+    border: 1px solid #243400 !important;
+    border-radius: 3px;
+    padding: 0.3em;
+    width: 100% !important;
+}
+
+.form_option{
+   font-size: 1em;
+}
+
