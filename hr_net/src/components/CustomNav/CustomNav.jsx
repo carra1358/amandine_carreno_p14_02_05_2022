@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import propTypes from "prop-types"
-import { FaUserPlus } from "react-icons/fa";
+import { CgUserList, CgUserAdd } from "react-icons/cg";
 import "./custom_nav.scss"
+import { useState } from "react";
 /* eslint-disable */
 /**
  * Custom navigation Link
@@ -10,20 +11,28 @@ import "./custom_nav.scss"
  * @returns react-element
  */
 function CustomNav({ to, label }) {
+
+    const [isHover, setIsHover] = useState(false);
+
     return (
-        label === "Home" ?
-            <>
-                <Link to={to}>
-                    <FaUserPlus />
-                    <h4>{label}</h4>
+        <>
+            {isHover ?
+
+                <Link to={to} className="nav-item" onMouseOut={() => setIsHover(false)}>
+                    {label}<br />
+                    employees
                 </Link>
-            </>
-            : <>
-                <Link to={to}>
-                    <FaUserPlus />
-                    <h4>{label}</h4>
-                </Link>
-            </>
+
+                :
+
+                <Link to={to} className="nav-item" onMouseOver={() => setIsHover(true)}>
+                    {
+                        to === "/" ?
+                            <CgUserAdd /> : <CgUserList />
+                    }
+                </Link>}
+
+        </>
     )
 }
 export default CustomNav;
@@ -31,5 +40,4 @@ export default CustomNav;
 CustomNav.propTypes = {
     to: propTypes.string,
     label: propTypes.string,
-
 }

@@ -1,0 +1,29 @@
+a{
+    text-decoration: none;
+    height: 3em;
+    color: #FFFF;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1em;
+    svg{
+        font-size: 2.5em;
+       
+    }
+}
+
+.nav-item{
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+ width: 50%;
+ padding: 1%;
+ border-radius: 3px;
+ margin: 0 0 0 10%;
+
+}
+
+
+.nav-item:hover{
+    color: #243400;
+    background-color: #FFFF;
+}
