@@ -17,19 +17,19 @@ function Form() {
 
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [isValid, setIsValid] = useState(false)
+    const [isValid, setIsValid] = useState(true)
     const form = useRef()
     const dispatch = useDispatch()
     const onSubmit = (data) => {
         dispatch(createAction(data))
         setIsValid(true)
         form.current.reset()
-
     };
 
 
     return (
         <>
+            {isValid ? <Modal visibility="visible" closeModal={() => setIsValid(false)} /> : <Modal visibility="hidden" />}
             <form onSubmit={handleSubmit(onSubmit)} ref={form}>
                 <div className="inputs">
                     <label htmlFor="firstName">FirstName</label>
@@ -95,7 +95,8 @@ function Form() {
                     <div className='submit_button'><button type="submit">Save</button></div>
                 </div>
             </form>
-            {isValid ? <Modal visibility="visible" /> : <Modal visibility="hidden" />}
+
+
         </>
     )
 

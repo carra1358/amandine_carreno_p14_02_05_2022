@@ -1,21 +1,31 @@
 
+import { useState, useEffect } from "react";
 import { IoCloseSharp } from "react-icons/io5"
 import propTypes from "prop-types"
 import "./modal.scss"
-import { useRef } from "react";
-// import { useState } from "react"
 
-function Modal({ visibility }) {
 
-    const modal = useRef();
+function Modal({ visibility, closeModal }) {
 
-    const closeModal = () => {
-        modal.current.classList.remove("visible")
-        modal.current.classList.add("hidden")
-    }
+    const bodyheight = document.body.clientHeight;
+    console.log(bodyheight)
+    const [h, setH] = useState(bodyheight);
 
+    const updateheight = () => {
+        if (bodyheight) {
+            setH(bodyheight);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener("resize", updateheight);
+        setH(bodyheight);
+        return () => {
+            window.removeEventListener("resize", updateheight);
+        };
+    }, []);
     return (
-        <div className={"modal_bck " + visibility} ref={modal}>
+        <div className={"modal_bck " + visibility} style={{ height: h }}>
             <div className="modal_wrapper">
                 <span className="modal_close" onClick={closeModal}><IoCloseSharp /></span>
                 <p className="modal_message">Employee Created</p>
@@ -26,6 +36,7 @@ function Modal({ visibility }) {
 }
 
 Modal.propTypes = {
-    visibility: propTypes.string
+    visibility: propTypes.string,
+    closeModal: propTypes.func
 }
 export default Modal;
