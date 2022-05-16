@@ -1,3 +1,5 @@
+@import "../common/_vars.scss";
+
 form{
     width: 100%;
     display: flex;
@@ -11,18 +13,18 @@ form{
     justify-content: center;
     button{
         width: 20%;
-        color: #243400;
+        color: $form-main-color;
         background-color: transparent;
-        border: 1px solid #243400;
-        box-shadow: 1px 1px 4px #243400;;
+        border: 1px solid $form-main-color;
+        box-shadow: 1px 1px 4px $form-main-color;
         border-radius: 3px;
         font-size: 1.2em;
         padding: 0.5em;
         margin: 2vw 0;
     }
     button:hover{
-        background-color: #243400;
-        color: #FFFF;
+        background-color: $second-color;
+        color: $main-color;
         border: 1px solid transparent;
         
     }
@@ -30,12 +32,12 @@ form{
 
 .inputs{
     width: 80%;
-    margin: 1vw 0; 
+    margin: 1vw 0 0 0; 
     display: flex;
     justify-content: space-between;
     input{
         width: 65%;
-        border: 1px solid #243400;
+        border: 1px solid $form-main-color;
         border-radius: 3px;
         padding: 0.4em;
     }
@@ -46,6 +48,7 @@ form{
     display: flex;
     flex-wrap: wrap;
     h4{
+        color: $form-main-color;
         width: 100%;
         font-size: 1.3em;
         display: flex;
@@ -59,8 +62,8 @@ form{
     select{
         padding: 0.3em;
         width: 65%;
-        border: 1px solid #243400;
-        color: #243400;
+        border: 1px solid $form-main-color;
+        color: $form-main-color;
         border-radius: 3px;
         font-size: 1em;
         -ms-box-sizing:content-box;
@@ -74,30 +77,32 @@ form{
     display: block;
     width: 40%;
     height: 1px;
-    background-color: #243400;
+    background-color: $form-main-color;
 
 }
 
 .input_date{
     width: 80%;
-    margin: 1vw 0;
+    margin: 1vw 0 0 0;
     display: flex;
     justify-content: space-between;
 }
 
-.react-date-picker{
+.react-date-picker, .react-date-picker--closed, .react-date-picker--enabled {
     display: flex;
-    width: 65%;
     position: relative;
     align-items: center;
-    flex-wrap: nowrap;
+    width: 66% !important;
+    border: 1px solid $form-main-color !important;
+    border-radius: 3px;
+    padding: 0.3em;
     
     button{
         margin: 0;
         box-shadow: none;
         width: 10%;
         svg{
-            stroke: #243400;
+            stroke: $second-color;
         }
     }
 
@@ -105,14 +110,16 @@ form{
     color: #243400;
     }
 }
-.react-date-picker__wrapper{
-    border: 1px solid #243400 !important;
-    border-radius: 3px;
-    padding: 0.3em;
+.react-date-picker__wrapper {
     width: 100% !important;
+    border: transparent;
 }
 
-.form_option{
-   font-size: 1em;
+.error_message{
+   width: 80%;
+   text-align: start;
+   margin: 2px 0 1vw 0;
+   color: $second-color;
 }
+
 
