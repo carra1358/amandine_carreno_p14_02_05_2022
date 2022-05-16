@@ -1,3 +1,5 @@
+@import "../../components/common/vars";
+
 main{
     display: flex;
     justify-content: center;
@@ -8,14 +10,15 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    color:#243400;
+    color: $form-main-color;
     padding: 0.3em;
     border-radius: 5px;
     font-size: 1em;
-    box-shadow: 1px 1px 4px #494f39;
+    box-shadow: 1px 1px 4px $form-main-color;
     margin-top: 5% ;
 }
 
 .form_title{
+    color: $form-main-color;
     margin: 4% 0
 }

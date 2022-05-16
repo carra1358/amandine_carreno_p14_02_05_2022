@@ -1,12 +1,14 @@
+@import "../common/_vars.scss";
+
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #243400;
+    background-color: $second-color;
     padding: 0 15% 0 15%;
     h1{
         font-size: 2em;
-        color: #FFFF;
+        color: $main-color;
         
     }
 }
