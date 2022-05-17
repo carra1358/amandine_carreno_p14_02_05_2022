@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { states } from './formState';
 import "./form.scss"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createAction } from "redux/employeeSlice";
 import { useRef, useState } from "react";
 import Modal from "components/modal/Modal";
@@ -17,13 +17,17 @@ function Form() {
 
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [isValid, setIsValid] = useState(true)
+    const [isValid, setIsValid] = useState(false)
     const form = useRef()
     const dispatch = useDispatch()
+    const state = useSelector(u => u)
+    console.log(state)
     const onSubmit = (data) => {
+
         dispatch(createAction(data))
         setIsValid(true)
         form.current.reset()
+
     };
 
 
