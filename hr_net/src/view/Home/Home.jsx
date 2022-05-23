@@ -1,6 +1,6 @@
-import Form from "components/CreateEmployee/Form";
-import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
+import Form from "components/createEmployee/Form";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
 import "./home.scss"
 
 function Home() {

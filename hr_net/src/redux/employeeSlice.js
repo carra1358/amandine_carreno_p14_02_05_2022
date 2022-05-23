@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 
+
 // redux slice: englobe innitial state and reducers and generate actions automatically
 const employeeSlice = createSlice({
 
@@ -9,6 +10,7 @@ const employeeSlice = createSlice({
     initialState: {
         employees: []
     },
+    upDatedEmployees: [],
 
     reducers: {
 
@@ -17,10 +19,13 @@ const employeeSlice = createSlice({
             state.employees.push(action.payload)
             return state
         },
-
+        upDateAction: (state, action) => {
+            state.upDatedEmployees = action.payload
+            return state
+        },
     }
 
 })
 
-export const { createAction } = employeeSlice.actions;
+export const { createAction, upDateAction } = employeeSlice.actions;
 export default employeeSlice.reducer;
