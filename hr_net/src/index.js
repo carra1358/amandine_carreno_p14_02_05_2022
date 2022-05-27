@@ -14,9 +14,6 @@ import { PersistGate } from 'redux-persist/integration/react';
 let persistor = persistStore(store)
 
 
-
-
-
 const root = createRoot(document.getElementById('root'))
 
 root.render(

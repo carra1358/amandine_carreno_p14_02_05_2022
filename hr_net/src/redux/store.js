@@ -11,9 +11,8 @@ const persistConfig = {
 }
 
 
-
 const rootReducer = combineReducers({
-    employee: employeeReducer
+    employee: employeeReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)

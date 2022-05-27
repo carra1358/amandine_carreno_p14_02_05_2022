@@ -23,8 +23,13 @@ function Form() {
     const state = useSelector(u => u)
     console.log(state)
     const onSubmit = (data) => {
+        let fill = 20;
+        let i = 0
+        do {
+            dispatch(createAction(data))
+            i++
+        } while (i < fill)
 
-        dispatch(createAction(data))
         setIsValid(true)
         form.current.reset()
 

@@ -10,7 +10,6 @@ const employeeSlice = createSlice({
     initialState: {
         employees: []
     },
-    upDatedEmployees: [],
 
     reducers: {
 
@@ -19,13 +18,9 @@ const employeeSlice = createSlice({
             state.employees.push(action.payload)
             return state
         },
-        upDateAction: (state, action) => {
-            state.upDatedEmployees = action.payload
-            return state
-        },
     }
 
 })
 
-export const { createAction, upDateAction } = employeeSlice.actions;
+export const { createAction } = employeeSlice.actions;
 export default employeeSlice.reducer;
