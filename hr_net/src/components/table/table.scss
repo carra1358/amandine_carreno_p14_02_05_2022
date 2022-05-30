@@ -14,6 +14,8 @@
     margin: 2em 0;
 }
 
+
+
 .tab_container{
     width: 100%;
     
@@ -54,4 +56,34 @@
 
 .hidden{
     display: none;
+}
+
+.table_nav_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table_nav{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.table_nav_list{
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.table_nav_items{
+    padding: 0.8em;
+}
+
+.table_nav_button{
+    background-color: $second-color;
+    border: none;
+    color: $main-color;
+    padding: 0.8em;
+    
 }

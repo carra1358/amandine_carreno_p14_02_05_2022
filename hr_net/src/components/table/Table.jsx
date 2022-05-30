@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { VscTriangleUp, VscTriangleDown } from "react-icons/vsc"
 import "./table.scss"
 
+
 function Table() {
 
 
@@ -18,6 +19,7 @@ function Table() {
     const pageNumbers = []
     const lastEntrie = offset * limit
     const firstEntrie = lastEntrie - limit
+
 
 
 
@@ -136,7 +138,7 @@ function Table() {
                 <table className="employee_table">
                     <thead className="employee_table_header">
                         <tr>
-                            <td>First Name <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("firstName")} /><VscTriangleDown onClick={() => sortDown("firstName")} /></span></td>
+                            <td>First Name <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("firstName")} /> <VscTriangleDown onClick={() => sortDown("firstName")} /></span></td>
                             <td>Last Name <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("lastName")} /><VscTriangleDown onClick={() => sortDown("lastName")} /></span></td>
                             <td>Start Date <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("startDate")} /><VscTriangleDown onClick={() => sortDown("startDate")}></VscTriangleDown></span></td>
                             <td>Department <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("dpt")} /><VscTriangleDown onClick={() => sortDown("dpt")} /></span></td>
@@ -145,6 +147,7 @@ function Table() {
                             <td>City <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("city")} /><VscTriangleDown onClick={() => sortDown("city")} /></span></td>
                             <td>State <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("state")} /><VscTriangleDown onClick={() => sortDown("state")} /></span></td>
                             <td>Zipcode <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("zipCode")} /><VscTriangleDown onClick={() => sortDown("zipCode")} /></span></td>
+
                         </tr>
                     </thead>
                     <tbody className="employee_table_body">
@@ -177,15 +180,16 @@ function Table() {
                     showing {firstEntrie} to {data.length < 10 ? data.length : lastEntrie} of {data.length} entries
                 </p>
                 <div>
-                    <div><button onClick={() => { if (pageNumbers.length > 1 && offset != 1) { setOffset(offset - 1) } }}>Prev</button>
-                        <nav>
-                            <ul>
+                    <div className="table_nav_container">
+                        <button className="table_nav_button" onClick={() => { if (pageNumbers.length > 1 && offset != 1) { setOffset(offset - 1) } }}>Prev</button>
+                        <nav className="table_nav">
+                            <ul className="table_nav_list">
                                 {
                                     pageNumbers.map(number => {
                                         const keys = `page_${number}`
                                         return (
-                                            <li key={keys} onClick={() => setOffset(number)}>
-                                                {number}
+                                            <li className="table_nav_items" key={keys} onClick={() => setOffset(number)}>
+                                                <span style={{ color: offset === number ? "#539d83" : "#243400" }}>{number}</span>
                                             </li>
                                         )
                                     })
@@ -193,7 +197,7 @@ function Table() {
 
                             </ul>
                         </nav>
-                        <button onClick={() => { if (offset < pageNumbers.length) { setOffset(offset + 1) } }}>Next</button></div>
+                        <button className="table_nav_button" onClick={() => { if (offset < pageNumbers.length) { setOffset(offset + 1) } }}>Next</button></div>
                 </div>
 
             </div>
@@ -202,3 +206,17 @@ function Table() {
 }
 
 export default Table;
+
+/*
+ const tableHeader = ["firstName", "lastName", "startDate", "dpt", "birth", "street", "city", "state", "zipCode"]
+  {
+                                tableHeader.map(title => {
+                                    const [isActiveUp, setIsActiveUp] = useState(false)
+                                    const [isActiveDown, setIsActiveDown] = useState(false)
+                                    return (
+                                        <td key={title}>{title}<span className="table_cell_filter"><VscTriangleUp onClick={() => { (sortUp(title), setIsActiveUp(true), setIsActiveDown(false)) }} style={{ color: isActiveUp ? "#243400" : "#FFFF" }} /> <VscTriangleDown onClick={() => { (sortDown(title), setIsActiveUp(false)), setIsActiveDown(true) }} style={{ color: isActiveDown ? "#243400" : "#FFFF" }} /></span></td>
+                                    )
+                                })
+                            }
+
+*/
