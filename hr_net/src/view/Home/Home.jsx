@@ -9,7 +9,7 @@ function Home() {
             <Header />
             <main>
                 <div className="form_container">
-                    <h2 className="form_title">Create Employee</h2>
+                    <h1 className="form_title">Create Employee</h1>
                     <Form></Form>
                 </div>
             </main>

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import propTypes from "prop-types"
 import { CgUserList, CgUserAdd } from "react-icons/cg";
 import "./custom_nav.scss"
-import { useState } from "react";
 /* eslint-disable */
 /**
  * Custom navigation Link
@@ -12,25 +11,16 @@ import { useState } from "react";
  */
 function CustomNav({ to, label }) {
 
-    const [isHover, setIsHover] = useState(false);
 
     return (
         <>
-            {isHover ?
 
-                <Link to={to} className="nav-item" onMouseOut={() => setIsHover(false)}>
-                    {label}<br />
-                    employees
-                </Link>
-
-                :
-
-                <Link to={to} className="nav-item" onMouseOver={() => setIsHover(true)}>
-                    {
-                        to === "/" ?
-                            <CgUserAdd /> : <CgUserList />
-                    }
-                </Link>}
+            <Link to={to} className="nav-item">
+                {
+                    to === "/" ?
+                        <CgUserAdd /> : <CgUserList />
+                }
+            </Link>
 
         </>
     )

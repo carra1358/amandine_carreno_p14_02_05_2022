@@ -7,7 +7,6 @@ function Footer() {
             <footer>
                 <div className="logo_content">
                     <img src={logo}></img>
-                    <p>WEALTH HEALTH</p>
                 </div>
             </footer>
         </>
