@@ -4,6 +4,9 @@ import { VscTriangleUp, VscTriangleDown } from "react-icons/vsc"
 import "./table.scss"
 
 
+
+
+
 function Table() {
 
 
@@ -19,6 +22,9 @@ function Table() {
     const pageNumbers = []
     const lastEntrie = offset * limit
     const firstEntrie = lastEntrie - limit
+    const [propertySelected, setPropertySelected] = useState(null)
+
+
 
 
 
@@ -29,7 +35,7 @@ function Table() {
     }
 
     const handleLimit = () => {
-        console.log(data)
+
         if (data.length === 0) {
             setDataShown(null)
         }
@@ -47,6 +53,7 @@ function Table() {
         })
         setData(result)
         handleLimit()
+        setPropertySelected(`${property}Up`)
     }
 
     const sortDown = (property) => {
@@ -57,9 +64,12 @@ function Table() {
             return 0;
 
         })
+
         setData(result)
         handleLimit()
+        setPropertySelected(`${property}Down`)
     }
+
 
     const handleSearch = () => {
 
@@ -115,6 +125,9 @@ function Table() {
     }, [input])
 
 
+
+
+
     return (
         <main className="main_container_employee">
             <h1 className="title">Current Employee</h1>
@@ -138,15 +151,60 @@ function Table() {
                 <table className="employee_table">
                     <thead className="employee_table_header">
                         <tr>
-                            <td>First Name <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("firstName")} /> <VscTriangleDown onClick={() => sortDown("firstName")} /></span></td>
-                            <td>Last Name <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("lastName")} /><VscTriangleDown onClick={() => sortDown("lastName")} /></span></td>
-                            <td>Start Date <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("startDate")} /><VscTriangleDown onClick={() => sortDown("startDate")}></VscTriangleDown></span></td>
-                            <td>Department <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("dpt")} /><VscTriangleDown onClick={() => sortDown("dpt")} /></span></td>
-                            <td>Date of Birth <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("birth")} /><VscTriangleDown onClick={() => sortDown("birth")}></VscTriangleDown></span></td>
-                            <td>Street <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("street")} /><VscTriangleDown onClick={() => sortDown("street")} /></span></td>
-                            <td>City <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("city")} /><VscTriangleDown onClick={() => sortDown("city")} /></span></td>
-                            <td>State <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("state")} /><VscTriangleDown onClick={() => sortDown("state")} /></span></td>
-                            <td>Zipcode <span className="table_cell_filter"><VscTriangleUp onClick={() => sortUp("zipCode")} /><VscTriangleDown onClick={() => sortDown("zipCode")} /></span></td>
+                            <td>First Name
+                                <span className="table_cell_filter">
+                                    <VscTriangleUp fill={propertySelected === "firstNameUp" ? "#243400" : "#FFFF"} onClick={() => sortUp("firstName")} className="sort_icon" />
+                                    <VscTriangleDown onClick={() => sortDown("firstName")} fill={propertySelected === "firstNameDown" ? "#243400" : "#FFFF"} />
+                                </span>
+                            </td>
+                            <td>Last Name
+                                <span className="table_cell_filter">
+                                    <VscTriangleUp fill={propertySelected === "lastNameUp" ? "#243400" : "#FFFF"} onClick={() => sortUp("lastName")} />
+                                    <VscTriangleDown fill={propertySelected === "lastNameDown" ? "#243400" : "#FFFF"} onClick={() => sortDown("lastName")} />
+                                </span>
+                            </td>
+                            <td>Start Date
+                                <span className="table_cell_filter">
+                                    <VscTriangleUp fill={propertySelected === "startDateUp" ? "#243400" : "#FFFF"} onClick={() => sortUp("startDate")} />
+                                    <VscTriangleDown fill={propertySelected === "startDateDown" ? "#243400" : "#FFFF"} onClick={() => sortDown("startDate")}></VscTriangleDown>
+                                </span>
+                            </td>
+                            <td>Department
+                                <span className="table_cell_filter">
+                                    <VscTriangleUp fill={propertySelected === "dptUp" ? "#243400" : "#FFFF"} onClick={() => sortUp("dpt")} />
+                                    <VscTriangleDown fill={propertySelected === "dptDown" ? "#243400" : "#FFFF"} onClick={() => sortDown("dpt")} />
+                                </span>
+                            </td>
+                            <td>Date of Birth
+                                <span className="table_cell_filter">
+                                    <VscTriangleUp fill={propertySelected === "birthUp" ? "#243400" : "#FFFF"} onClick={() => sortUp("birth")} />
+                                    <VscTriangleDown fill={propertySelected === "birthDown" ? "#243400" : "#FFFF"} onClick={() => sortDown("birth")}></VscTriangleDown>
+                                </span>
+                            </td>
+                            <td>Street
+                                <span className="table_cell_filter">
+                                    <VscTriangleUp fill={propertySelected === "streetUp" ? "#243400" : "#FFFF"} onClick={() => sortUp("street")} />
+                                    <VscTriangleDown fill={propertySelected === "streetDown" ? "#243400" : "#FFFF"} onClick={() => sortDown("street")} />
+                                </span>
+                            </td>
+                            <td>City
+                                <span className="table_cell_filter">
+                                    <VscTriangleUp fill={propertySelected === "cityUp" ? "#243400" : "#FFFF"} onClick={() => sortUp("city")} />
+                                    <VscTriangleDown fill={propertySelected === "cityDown" ? "#243400" : "#FFFF"} onClick={() => sortDown("city")} />
+                                </span>
+                            </td>
+                            <td>State
+                                <span className="table_cell_filter">
+                                    <VscTriangleUp fill={propertySelected === "stateUp" ? "#243400" : "#FFFF"} onClick={() => sortUp("state")} />
+                                    <VscTriangleDown fill={propertySelected === "stateDown" ? "#243400" : "#FFFF"} onClick={() => sortDown("state")} />
+                                </span>
+                            </td>
+                            <td>Zipcode
+                                <span className="table_cell_filter">
+                                    <VscTriangleUp fill={propertySelected === "zipCodeUp" ? "#243400" : "#FFFF"} onClick={() => sortUp("zipCode")} />
+                                    <VscTriangleDown fill={propertySelected === "zipCodeDown" ? "#243400" : "#FFFF"} onClick={() => sortDown("zipCode")} />
+                                </span>
+                            </td>
 
                         </tr>
                     </thead>
@@ -200,6 +258,7 @@ function Table() {
                         <button className="table_nav_button" onClick={() => { if (offset < pageNumbers.length) { setOffset(offset + 1) } }}>Next</button></div>
                 </div>
 
+
             </div>
         </main>
     )
@@ -208,15 +267,15 @@ function Table() {
 export default Table;
 
 /*
- const tableHeader = ["firstName", "lastName", "startDate", "dpt", "birth", "street", "city", "state", "zipCode"]
-  {
-                                tableHeader.map(title => {
-                                    const [isActiveUp, setIsActiveUp] = useState(false)
-                                    const [isActiveDown, setIsActiveDown] = useState(false)
-                                    return (
-                                        <td key={title}>{title}<span className="table_cell_filter"><VscTriangleUp onClick={() => { (sortUp(title), setIsActiveUp(true), setIsActiveDown(false)) }} style={{ color: isActiveUp ? "#243400" : "#FFFF" }} /> <VscTriangleDown onClick={() => { (sortDown(title), setIsActiveUp(false)), setIsActiveDown(true) }} style={{ color: isActiveDown ? "#243400" : "#FFFF" }} /></span></td>
-                                    )
-                                })
-                            }
+ 
 
+                             <td>First Name <span className="table_cell_filter"><Icon /> <Icon className="icon_down" onClick={() => sortDown("firstName")} /></span></td>
+                            <td>Last Name <span className="table_cell_filter"><Icon onClick={() => sortUp("lastName")} /><Icon className="icon_down" onClick={() => sortDown("lastName")} /></span></td>
+                            <td>Start Date <span className="table_cell_filter"><Icon onClick={() => sortUp("startDate")} /><Icon className="icon_down" onClick={() => sortDown("startDate")} /></span></td>
+                            <td>Department <span className="table_cell_filter"><Icon onClick={() => sortUp("dpt")} /><Icon className="icon_down" onClick={() => sortDown("dpt")} /></span></td>
+                            <td>Date of Birth <span className="table_cell_filter"><Icon onClick={() => sortUp("birth")} /><Icon className="icon_down" onClick={() => sortDown("birth")} /></span></td>
+                            <td>Street <span className="table_cell_filter"><Icon onClick={() => sortUp("street")} /><Icon className="icon_down" onClick={() => sortDown("street")} /></span></td>
+                            <td>City <span className="table_cell_filter"><Icon onClick={() => sortUp("city")} /><Icon className="icon_down" onClick={() => sortDown("city")} /></span></td>
+                            <td>State <span className="table_cell_filter"><Icon onClick={() => sortUp("state")} /><Icon className="icon_down" onClick={() => sortDown("state")} /></span></td>
+                            <td>Zipcode <span className="table_cell_filter"><Icon onClick={() => sortUp("zipCode")} /><Icon className="icon_down" onClick={() => sortDown("zipCode")} /></span></td>
 */
