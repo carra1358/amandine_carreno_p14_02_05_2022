@@ -1,31 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 
+
 // redux slice: englobe innitial state and reducers and generate actions automatically
 const employeeSlice = createSlice({
 
     name: "employee",
 
     initialState: {
-        employeeProfil: {
-            firstName: null,
-            lastName: null,
-            dateOfBirth: null,
-            startDate: null,
-            Adress: {},
-            departement: null
-        }
-
+        employees: []
     },
 
     reducers: {
 
         // Save employee profil information
         createAction: (state, action) => {
-            state.employeeProfil = action.payload
+            state.employees.push(action.payload)
+            return state
         },
-
-
     }
 
 })

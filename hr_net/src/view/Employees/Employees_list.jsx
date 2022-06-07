@@ -1,16 +1,21 @@
-import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
+import Table from "components/table/Table";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+
+
+
 
 
 function Employees_list() {
+
+
+
     return (
         <div>
             <Header />
-            <div className="main_container">
-
-            </div>
+            <Table />
             <Footer />
-        </div>
+        </div >
     )
 }
 

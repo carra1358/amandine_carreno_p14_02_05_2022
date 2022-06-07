@@ -17,13 +17,22 @@ function Form() {
 
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const [isValid, setIsValid] = useState(true)
+    const [isValid, setIsValid] = useState(false)
     const form = useRef()
     const dispatch = useDispatch()
+
+
     const onSubmit = (data) => {
-        dispatch(createAction(data))
+        let fill = 20;
+        let i = 0
+        do {
+            dispatch(createAction(data))
+            i++
+        } while (i < fill)
+
         setIsValid(true)
         form.current.reset()
+
     };
 
 
