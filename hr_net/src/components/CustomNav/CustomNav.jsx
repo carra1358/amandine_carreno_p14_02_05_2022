@@ -1,29 +1,27 @@
 import { Link } from "react-router-dom";
 import propTypes from "prop-types"
-import { FaUserPlus } from "react-icons/fa";
+import { CgUserList, CgUserAdd } from "react-icons/cg";
 import "./custom_nav.scss"
-/* eslint-disable */
+
 /**
- * Custom navigation Link
+ * Custom navigation Link, display icon according to path name
  * @param {string} to path targeted
- * @param {string} label link's text content
  * @returns react-element
  */
-function CustomNav({ to, label }) {
+function CustomNav({ to }) {
+
+
     return (
-        label === "Home" ?
-            <>
-                <Link to={to}>
-                    <FaUserPlus />
-                    <h4>{label}</h4>
-                </Link>
-            </>
-            : <>
-                <Link to={to}>
-                    <FaUserPlus />
-                    <h4>{label}</h4>
-                </Link>
-            </>
+        <>
+
+            <Link to={to} className="nav-item">
+                {
+                    to === "/" ?
+                        <CgUserAdd /> : <CgUserList />
+                }
+            </Link>
+
+        </>
     )
 }
 export default CustomNav;
@@ -31,5 +29,4 @@ export default CustomNav;
 CustomNav.propTypes = {
     to: propTypes.string,
     label: propTypes.string,
-
 }
