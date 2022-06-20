@@ -6,7 +6,7 @@ import "./table.scss"
 
 
 
-
+// Display employees list, constains all filters and pagination logic
 function Table() {
 
 
@@ -26,14 +26,12 @@ function Table() {
 
 
 
-
-
-
-
+    // push numbre of pages in function of data array 
     for (let i = 1; i <= Math.ceil(data.length / limit); i++) {
         pageNumbers.push(i);
     }
 
+    // return wich data have to be displayed
     const handleLimit = () => {
 
         if (data.length === 0) {
@@ -43,7 +41,11 @@ function Table() {
         setDataShown(result)
     }
 
-
+    /**
+     * function to sort each column in acesndent order
+     * @param {string} property column selected
+     * @return array 
+     */
     const sortUp = (property) => {
         const result = data.sort((a, b) => {
 
@@ -51,11 +53,17 @@ function Table() {
             if (a[property] < b[property]) return -1;
             return 0;
         })
+
         setData(result)
         handleLimit()
         setPropertySelected(`${property}Up`)
     }
 
+    /**
+  * function to sort each column in descendant order
+  * @param {string} property column selected
+  * @return array 
+  */
     const sortDown = (property) => {
         const result = data.sort((a, b) => {
 
@@ -70,7 +78,7 @@ function Table() {
         setPropertySelected(`${property}Down`)
     }
 
-
+    // filter by input in searchBar
     const handleSearch = () => {
 
         const result = initEmployees.filter(item => {
@@ -98,6 +106,7 @@ function Table() {
 
     }
 
+    // reset to intial state
     const clearResult = () => {
         setOffset(1)
         setData([...initEmployees])
@@ -105,17 +114,19 @@ function Table() {
         setvisibility("visible")
     }
 
+    //handle default data display when component is mounted
     useEffect(() => {
         const x = initEmployees.slice(firstEntrie, lastEntrie)
         setDataShown(x)
     }, [])
 
-
+    //handle data display when offset or limit are modified
     useEffect(() => {
         handleLimit()
     }
         , [offset, limit])
 
+    //handle search when input is modified
     useEffect(() => {
         handleSearch()
 
