@@ -2,14 +2,13 @@ import { Link } from "react-router-dom";
 import propTypes from "prop-types"
 import { CgUserList, CgUserAdd } from "react-icons/cg";
 import "./custom_nav.scss"
-/* eslint-disable */
+
 /**
- * Custom navigation Link
+ * Custom navigation Link, display icon according to path name
  * @param {string} to path targeted
- * @param {string} label link's text content
  * @returns react-element
  */
-function CustomNav({ to, label }) {
+function CustomNav({ to }) {
 
 
     return (

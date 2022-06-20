@@ -3,7 +3,7 @@
 main{
     display: flex;
     justify-content: center;
-    padding: 0 15%;
+    padding: 0 25%;
 }
 
 .form_container{
@@ -15,12 +15,13 @@ main{
     border-radius: 5px;
     font-size: 1em;
     box-shadow: 1px 1px 4px $form-main-color;
-    margin-top: 5% ;
+    margin-top: 2% ;
 }
 
 .form_title{
     color: $form-main-color;
-    margin: 4% 0
+    font-size: 1.5em;
+    margin: 2% 0
 }
 
 @media (max-width: 780px) {

@@ -3,42 +3,47 @@ import { states } from './formState';
 import "./form.scss"
 import { useDispatch } from "react-redux";
 import { createAction } from "redux/employeeSlice";
-import { useRef, useState } from "react";
-import Modal from "components/modal/Modal";
+import { useEffect, useRef, useState } from "react";
+import { Modal } from "amandine_carreno_p14_modal_lib"
+import "amandine_carreno_p14_modal_lib/dist/index.css"
 
 
+// Home form to add employees
 function Form() {
 
+    // object that contains validation requirements
     const validation = {
         minTextInput: 2,
         minCity: 3,
         zipCode: 5,
     }
 
-
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [isValid, setIsValid] = useState(false)
     const form = useRef()
     const dispatch = useDispatch()
 
-
+    /**
+     * function to register employee local storage,handle display of modal and reset from
+     * @param {array} data 
+     */
     const onSubmit = (data) => {
-        let fill = 20;
-        let i = 0
-        do {
-            dispatch(createAction(data))
-            i++
-        } while (i < fill)
 
+        dispatch(createAction(data))
         setIsValid(true)
         form.current.reset()
 
     };
 
 
+    const body = document.querySelector("body")
+    const [height, setHeight] = useState(null)
+    useEffect(() => {
+        setHeight(body.clientHeight.toString())
+    }, [body.clientHeight])
+
     return (
         <>
-            {isValid ? <Modal visibility="visible" closeModal={() => setIsValid(false)} /> : <Modal visibility="hidden" />}
             <form onSubmit={handleSubmit(onSubmit)} ref={form}>
                 <div className="inputs">
                     <label htmlFor="firstName">FirstName</label>
@@ -104,7 +109,7 @@ function Form() {
                     <div className='submit_button'><button type="submit">Save</button></div>
                 </div>
             </form>
-
+            <Modal isOpen={isValid} size="M" handleClose={() => setIsValid(false)} customButtonShow={false} underlayerHeight={height + "px"}><p className="modal_message"> Employee Created </p></Modal>
 
         </>
     )
