@@ -1,4 +1,4 @@
-import Form from "components/createEmployee/Form";
+import Form from "../../components/CreateEmployee/Form";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import "./home.scss"
