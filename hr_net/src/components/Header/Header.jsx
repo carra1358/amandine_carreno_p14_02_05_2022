@@ -1,4 +1,4 @@
-import CustomNav from "../customNav/CustomNav";
+import CustomNav from "components/customNav/CustomNav";
 import "./header.scss"
 
 
