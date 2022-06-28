@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.46e45595.css",
+    "main.js": "/static/js/main.efca0f8c.js",
+    "static/media/logo_WH.avif": "/static/media/logo_WH.c0cf051c94311b7adaae.avif",
+    "index.html": "/index.html",
+    "main.46e45595.css.map": "/static/css/main.46e45595.css.map",
+    "main.efca0f8c.js.map": "/static/js/main.efca0f8c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46e45595.css",
+    "static/js/main.efca0f8c.js"
+  ]
+}
