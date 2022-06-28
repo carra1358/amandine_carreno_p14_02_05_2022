@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/amandine_carrenp_p14_02_05_2022/static/css/main.46e45595.css",
-    "main.js": "/amandine_carrenp_p14_02_05_2022/static/js/main.c52afc07.js",
-    "static/media/logo_WH.avif": "/amandine_carrenp_p14_02_05_2022/static/media/logo_WH.c0cf051c94311b7adaae.avif",
-    "index.html": "/amandine_carrenp_p14_02_05_2022/index.html",
-    "main.46e45595.css.map": "/amandine_carrenp_p14_02_05_2022/static/css/main.46e45595.css.map",
-    "main.c52afc07.js.map": "/amandine_carrenp_p14_02_05_2022/static/js/main.c52afc07.js.map"
+    "main.css": "/amandine_carreno_p14_02_05_2022/static/css/main.46e45595.css",
+    "main.js": "/amandine_carreno_p14_02_05_2022/static/js/main.a747c78b.js",
+    "static/media/logo_WH.avif": "/amandine_carreno_p14_02_05_2022/static/media/logo_WH.c0cf051c94311b7adaae.avif",
+    "index.html": "/amandine_carreno_p14_02_05_2022/index.html",
+    "main.46e45595.css.map": "/amandine_carreno_p14_02_05_2022/static/css/main.46e45595.css.map",
+    "main.a747c78b.js.map": "/amandine_carreno_p14_02_05_2022/static/js/main.a747c78b.js.map"
   },
   "entrypoints": [
     "static/css/main.46e45595.css",
-    "static/js/main.c52afc07.js"
+    "static/js/main.a747c78b.js"
   ]
 }
