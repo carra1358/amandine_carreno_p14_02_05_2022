@@ -1,9 +1,9 @@
 import React from 'react';
 import { createRoot } from "react-dom/client"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from "./view/Home/Home"
+import Home from "./view/home/Home"
 import "./index.scss"
-import Employees_list from './view/Employees/Employees_list';
+import { Employees_list } from './view/employees/Employees_list';
 import { Provider } from 'react-redux';
 import store from "./redux/store"
 import { persistStore } from 'redux-persist'

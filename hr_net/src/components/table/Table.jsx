@@ -277,16 +277,3 @@ function Table() {
 
 export default Table;
 
-/*
- 
-
-                             <td>First Name <span className="table_cell_filter"><Icon /> <Icon className="icon_down" onClick={() => sortDown("firstName")} /></span></td>
-                            <td>Last Name <span className="table_cell_filter"><Icon onClick={() => sortUp("lastName")} /><Icon className="icon_down" onClick={() => sortDown("lastName")} /></span></td>
-                            <td>Start Date <span className="table_cell_filter"><Icon onClick={() => sortUp("startDate")} /><Icon className="icon_down" onClick={() => sortDown("startDate")} /></span></td>
-                            <td>Department <span className="table_cell_filter"><Icon onClick={() => sortUp("dpt")} /><Icon className="icon_down" onClick={() => sortDown("dpt")} /></span></td>
-                            <td>Date of Birth <span className="table_cell_filter"><Icon onClick={() => sortUp("birth")} /><Icon className="icon_down" onClick={() => sortDown("birth")} /></span></td>
-                            <td>Street <span className="table_cell_filter"><Icon onClick={() => sortUp("street")} /><Icon className="icon_down" onClick={() => sortDown("street")} /></span></td>
-                            <td>City <span className="table_cell_filter"><Icon onClick={() => sortUp("city")} /><Icon className="icon_down" onClick={() => sortDown("city")} /></span></td>
-                            <td>State <span className="table_cell_filter"><Icon onClick={() => sortUp("state")} /><Icon className="icon_down" onClick={() => sortDown("state")} /></span></td>
-                            <td>Zipcode <span className="table_cell_filter"><Icon onClick={() => sortUp("zipCode")} /><Icon className="icon_down" onClick={() => sortDown("zipCode")} /></span></td>
-*/

@@ -6,7 +6,7 @@ import Header from "components/header/Header";
 
 
 
-function Employees_list() {
+export const Employees_list = () => {
 
 
 
@@ -19,4 +19,3 @@ function Employees_list() {
     )
 }
 
-export default Employees_list;
