@@ -1,0 +1,30 @@
+@import "../common/_vars.scss";
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $second-color;
+    padding: 0 2% 0 2%;
+    height: 100px;
+    h2{
+        font-size: 2em;
+        color: $main-color;
+        
+    }
+}
+
+nav{
+  display: flex;
+  justify-content: flex-end;
+  width: 20%;
+}
+
+@media (max-width: 780px) {
+  header{
+      padding: 0 2%;
+      h2{
+        font-size: 1.5em;
+      }
+  }
+}
