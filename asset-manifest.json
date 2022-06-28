@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.46e45595.css",
-    "main.js": "/static/js/main.efca0f8c.js",
-    "static/media/logo_WH.avif": "/static/media/logo_WH.c0cf051c94311b7adaae.avif",
-    "index.html": "/index.html",
-    "main.46e45595.css.map": "/static/css/main.46e45595.css.map",
-    "main.efca0f8c.js.map": "/static/js/main.efca0f8c.js.map"
+    "main.css": "/amandine_carrenp_p14_02_05_2022/static/css/main.46e45595.css",
+    "main.js": "/amandine_carrenp_p14_02_05_2022/static/js/main.c52afc07.js",
+    "static/media/logo_WH.avif": "/amandine_carrenp_p14_02_05_2022/static/media/logo_WH.c0cf051c94311b7adaae.avif",
+    "index.html": "/amandine_carrenp_p14_02_05_2022/index.html",
+    "main.46e45595.css.map": "/amandine_carrenp_p14_02_05_2022/static/css/main.46e45595.css.map",
+    "main.c52afc07.js.map": "/amandine_carrenp_p14_02_05_2022/static/js/main.c52afc07.js.map"
   },
   "entrypoints": [
     "static/css/main.46e45595.css",
-    "static/js/main.efca0f8c.js"
+    "static/js/main.c52afc07.js"
   ]
 }
