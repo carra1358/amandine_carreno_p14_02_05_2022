@@ -1,0 +1,122 @@
+@import "../common/_vars.scss";
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_message{
+    text-align: center;
+}
+
+
+
+.submit_button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    button{
+        width: 18%;
+        color: $form-main-color;
+        background-color: transparent;
+        border: 1px solid $form-main-color;
+        box-shadow: 1px 1px 4px $form-main-color;
+        border-radius: 3px;
+        font-size: 1.1em;
+        padding: 0.5em;
+        margin: 0.5em 0;
+    }
+    button:hover{
+        background-color: $second-color;
+        color: $main-color;
+        border: 1px solid transparent;
+        
+    }
+}
+
+.inputs{
+    width: 80%;
+    margin: 0.2em 0 0 0; 
+    display: flex;
+    justify-content: space-between;
+    input{
+        width: 65%;
+        border: 1px solid $form-main-color;
+        border-radius: 3px;
+        padding: 0.4em;
+    }
+}
+
+.adress{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    h4{
+        color: $form-main-color;
+        width: 100%;
+        font-size: 1.1em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .inputs{
+        width: 100%;
+    }
+
+    select{
+        padding: 0.3em;
+        width: 65%;
+        border: 1px solid $form-main-color;
+        color: $form-main-color;
+        border-radius: 3px;
+        font-size: 1em;
+        -ms-box-sizing:content-box;
+        -moz-box-sizing:content-box;
+        -webkit-box-sizing:content-box; 
+        box-sizing:content-box;
+    }
+}
+
+.deco{
+    display: block;
+    width: 40%;
+    height: 1px;
+    background-color: $form-main-color;
+
+}
+
+.input_date{
+    width: 80%;
+    margin: 1vw 0 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.error_message{
+   width: 80%;
+   text-align: start;
+   margin: 2px 0 1vw 0;
+   color: $second-color;
+}
+
+@media (max-width: 780px) {
+    .inputs{
+        margin: 1em 0;
+    }
+    .submit_button{
+        width: 100%;
+        button{
+            width: 38%;
+            padding: 0.5em;
+            margin: 2em 0;
+        }
+        
+    }
+    .form_title{
+       font-size: 25px;
+       margin: 30px 0;
+    }
+}
+

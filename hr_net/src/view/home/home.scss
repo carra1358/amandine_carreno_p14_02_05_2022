@@ -1,0 +1,42 @@
+@import "../../components/common/vars";
+
+main{
+    display: flex;
+    justify-content: center;
+    padding: 0 25%;
+}
+
+.form_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $form-main-color;
+    padding: 0.3em;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 1px 1px 4px $form-main-color;
+    margin-top: 2% ;
+}
+
+.form_title{
+    color: $form-main-color;
+    font-size: 1.5em;
+    margin: 2% 0
+}
+
+@media (max-width: 780px) {
+    main{
+        padding: 0;
+    }
+    .form_container{
+        font-size: 0.7em;
+        border: none;
+        box-shadow: none;
+        margin-top: 0;
+    }
+
+    .form_title{
+        font-size: 25px;
+        margin: 30px 0;
+    }
+}

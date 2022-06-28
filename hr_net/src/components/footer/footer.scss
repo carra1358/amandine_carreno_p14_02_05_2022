@@ -1,0 +1,27 @@
+@import "../common/_vars.scss";
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 3%;
+}
+
+.logo_content{
+    img{
+        width: 3em;
+        height: 3em;
+    }
+}
+
+@media (max-width: 780px) {
+    .logo_content{
+        width: 5%;
+    }
+}
+@media (max-width: 450px) {
+    .logo_content{
+        width: 12%;
+    }
+}
+

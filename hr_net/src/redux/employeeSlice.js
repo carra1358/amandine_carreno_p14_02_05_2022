@@ -8,7 +8,7 @@ const employeeSlice = createSlice({
     name: "employee",
 
     initialState: {
-        employees: []
+        employees: [],
     },
 
     reducers: {
